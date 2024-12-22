@@ -1,5 +1,10 @@
-Este conteúdo é parte do curso Clean Code e Clean Architecture da Branas.io
+# About
+This project is a clean architecture study usign TDD, DDD and Clean Desing.
 
-Para mais informações acesse:
+# Development
+To run in development mode:
+- Step 1: Run `docker-compose up` 
+- Step 2: Run `npx nodemon src/main.ts`
 
-https://branas.io
+# Tests
+- To run all the tests: `npx jest`
