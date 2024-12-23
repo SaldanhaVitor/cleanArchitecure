@@ -19,7 +19,7 @@ export default class RideRepositoryDatabase implements RideRepository {
         status,
         date
       ) values ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
-      [ride.rideId, ride.passengerId, ride.driverId || null, ride.fromLat, ride.fromLong, ride.toLat, ride.toLong, ride.status, ride.date]);
+      [ride.rideId, ride.passengerId, ride.driverId || null, ride.getFrom().getLat(), ride.getFrom().getLong(), ride.getTo().getLat(), ride.getTo().getLong(), ride.status, ride.date]);
   }
 
   async getRideById(rideId: string): Promise<Ride> {

@@ -12,10 +12,10 @@ export default class GetRide implements UseCase {
       rideId: ride.rideId,
       passengerId: ride.passengerId,
       driverId: ride.driverId,
-      fromLat: ride.fromLat,
-      fromLong: ride.fromLong,
-      toLat: ride.toLat,
-      toLong: ride.toLong,
+      fromLat: ride.getFrom().getLat(),
+      fromLong: ride.getFrom().getLong(),
+      toLat: ride.getTo().getLat(),
+      toLong: ride.getTo().getLong(),
       status: ride.status,
       date: ride.date
     }
