@@ -1,21 +1,23 @@
 import crypto from "crypto";
 import Cpf from "./Cpf";
 import Email from "./Email";
+import Name from "./Name";
 
 export default class Account {
   private cpf: Cpf;
   private email: Email;
+  private name: Name;
 
   constructor(
     readonly accountId: string,
-    readonly name: string,
+    name: string,
     email: string,
     cpf: string,
     readonly carPlate: string,
     readonly isPassenger: boolean,
     readonly isDriver: boolean
   ) {
-    if (!name.match(/[a-zA-Z] [a-zA-Z]+/)) throw new Error("Invalid name");
+    this.name = new Name(name);
     this.email = new Email(email);
     this.cpf = new Cpf(cpf);
     if (isDriver && !carPlate.match(/[A-Z]{3}[0-9]{4}/)) throw new Error("Invalid car plate");
@@ -40,5 +42,9 @@ export default class Account {
 
   getEmail() {
     return this.email.getValue();
+  }
+
+  getName() {
+    return this.name.getValue();
   }
 }
