@@ -15,7 +15,7 @@ export default class GetAccount implements UseCase {
 			name: account.getName(),
 			email: account.getEmail(),
 			cpf: account.getCpf(),
-			carPlate: account.carPlate,
+			carPlate: account.getCarPlate(),
 			isPassenger: account.isPassenger,
 			isDriver: account.isDriver
 		};
