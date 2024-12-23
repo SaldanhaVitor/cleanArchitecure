@@ -13,7 +13,7 @@ export default class GetAccount implements UseCase {
 		return {
 			accountId: account.accountId,
 			name: account.name,
-			email: account.email,
+			email: account.getEmail(),
 			cpf: account.getCpf(),
 			carPlate: account.carPlate,
 			isPassenger: account.isPassenger,
